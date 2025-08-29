@@ -17,9 +17,9 @@
       <div
         class="relative z-10 flex flex-col justify-center items-center text-center px-4 flex-grow"
       >
-        <h1 class="text-5xl font-bold mb-4">Welcome to BrightSpace CL</h1>
+        <h1 class="text-5xl font-bold mb-4">Welcome to CompName</h1>
         <p class="text-xl mb-6 max-w-xl">
-          We bring brilliance to your home with professional cleaning services.
+          We bring brilliance to your home with professional remodeling services.
         </p>
         <a
           href="/contact"
