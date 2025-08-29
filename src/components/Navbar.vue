@@ -1,89 +1,106 @@
 <template>
   <header class="w-full">
-    
+
     <!-- Top info bar -->
-    <div class="bg-transparent text-white text-sm flex items-center space-x-6 px-6 py-2 relative z-20">
-      <div class="flex items-center space-x-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 11c1.38 0 2.5-1.12 2.5-2.5S13.38 6 12 6s-2.5 1.12-2.5 2.5S10.62 11 12 11z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z" />
-        </svg>
-        <span>Houston, TX</span>
-      </div>
-      <div class="flex items-center space-x-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 5a2 2 0 012-2h2a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM16 3h5v5m0 0L16 3m5 5l-5-5M16 16h5v5m0 0L16 16m5 5l-5-5" />
-        </svg>
-        <span>(000) 000-0000</span>
+    <div class="bg-transparent text-white text-lg py-6 relative z-20">
+      <div class="max-w-screen-xl mx-auto flex justify-between items-center ">
+        <!-- Left side -->
+        <div class="flex items-center space-x-6">
+          <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+            </svg>
+            <span>Houston, TX</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              class="bi bi-telephone-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+            </svg>
+            <span>(000) 000-0000</span>
+          </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="flex items-center space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-clock-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+          </svg>
+          <span>Available: Mon-Fri 5:00am - 6:00pm</span>
+        </div>
       </div>
     </div>
 
+
+    <hr class="border-t border-white border-opacity-30" />
+
     <!-- Main navbar -->
-    <nav class="bg-transparent px-6 py-4 flex items-center justify-between relative z-20">
+    <nav class="bg-transparent py-5 relative z-20">
+      <div class="max-w-screen-xl mx-auto flex items-center justify-between">
 
-      <!-- Logo -->
-      <div class="flex items-center space-x-3">
-        <img src="../assets/images/logo.png" alt="Logo" class="h-10 w-10" />
-        <span class="font-bold text-xl text-white">BrightSpace CL</span>
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <span class="font-bold text-4xl text-white">NAME</span>
+        </div>
+
+
+        <!-- Desktop links -->
+        <ul class="hidden md:flex space-x-12 text-white relative text-lg">
+          <li><a href="/" class="hover:text-blue-400">HOME</a></li>
+          <li><a href="/about" class="hover:text-blue-400">ABOUT US</a></li>
+
+          <!-- Services with dropdown -->
+          <li class="relative group">
+            <button class="hover:text-blue-400 flex items-center space-x-1 focus:outline-none">
+              <span>SERVICES</span>
+              <svg class="h-4 w-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 -mt-0.5 w-40 bg-black bg-opacity-90  text-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+              <li>
+                <a href="/services/residential" class="block px-4 py-2 hover:bg-blue-600">Residential</a>
+              </li>
+              <li>
+                <a href="/services/commercial" class="block px-4 py-2 hover:bg-blue-600">Commercial</a>
+              </li>
+              <li>
+                <a href="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Deep Cleaning</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="relative group">
+            <button class="hover:text-blue-400 flex items-center space-x-1 focus:outline-none">
+              <span>PROJECTS</span>
+              <svg class="h-4 w-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <ul
+              class="absolute left-0 -mt-0.5 w-40 bg-black bg-opacity-90 text-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+              <li>
+                <a href="/projects/residential" class="block px-4 py-2 hover:bg-blue-600">Residential</a>
+              </li>
+              <li>
+                <a href="/projects/commercial" class="block px-4 py-2 hover:bg-blue-600">Commercial</a>
+              </li>
+              <li>
+                <a href="/projects/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Deep Cleaning</a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="/contact" class="hover:text-blue-400">CONTACT</a></li>
+        </ul>
       </div>
-
-      <!-- Desktop links -->
-      <ul class="hidden md:flex space-x-6 text-white relative">
-        <li><a href="/" class="hover:text-blue-400">Home</a></li>
-        <li><a href="/about" class="hover:text-blue-400">About</a></li>
-
-        <!-- Services with dropdown -->
-        <li class="relative group">
-          <button class="hover:text-blue-400 flex items-center space-x-1 focus:outline-none">
-            <span>Services</span>
-            <svg class="h-4 w-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <ul
-            class="absolute left-0 -mt-0.5 w-40 bg-black bg-opacity-90 text-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-            <li>
-              <a href="/services/residential" class="block px-4 py-2 hover:bg-blue-600">Residential</a>
-            </li>
-            <li>
-              <a href="/services/commercial" class="block px-4 py-2 hover:bg-blue-600">Commercial</a>
-            </li>
-            <li>
-              <a href="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Deep Cleaning</a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="relative group">
-          <button class="hover:text-blue-400 flex items-center space-x-1 focus:outline-none">
-            <span>Projects</span>
-            <svg class="h-4 w-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <ul
-            class="absolute left-0 -mt-0.5 w-40 bg-black bg-opacity-90 text-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-            <li>
-              <a href="/projects/residential" class="block px-4 py-2 hover:bg-blue-600">Residential</a>
-            </li>
-            <li>
-              <a href="/projects/commercial" class="block px-4 py-2 hover:bg-blue-600">Commercial</a>
-            </li>
-            <li>
-              <a href="/projects/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Deep Cleaning</a>
-            </li>
-          </ul>
-        </li>
-
-        <li><a href="/contact" class="hover:text-blue-400">Contact</a></li>
-      </ul>
 
       <!-- Mobile hamburger -->
       <button @click="isOpen = !isOpen" class="md:hidden text-white focus:outline-none z-30">
