@@ -1,15 +1,16 @@
 <template>
-  <header class="w-full">
+  <header
+    :class="['fixed w-full z-50 transition-all duration-300', scrolled ? 'bg-white shadow-md' : 'bg-transparent']">
 
     <!-- Top info bar -->
-    <div class="bg-transparent text-white text-lg py-6 relative z-30">
+    <div :class="['text-lg py-6 relative z-30 transition-colors duration-300', scrolled ? 'text-black' : 'text-white']">
       <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 
-           flex flex-col md:flex-row items-center 
-           justify-center md:justify-between 
-           text-center md:text-left space-y-4 md:space-y-0">
+       flex flex-row flex-wrap items-center 
+       justify-center md:justify-between 
+       text-center md:text-left space-y-0 space-x-6">
 
         <!-- Left side (Location + Phone) -->
-        <div class="flex flex-col sm:flex-row items-center sm:space-x-6 space-y-2 sm:space-y-0">
+        <div class="flex flex-row items-center space-x-6">
           <div class="flex items-center space-x-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
               class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
@@ -28,7 +29,7 @@
         </div>
 
         <!-- Right side (Availability) -->
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-3 mt-4 md:mt-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
             class="bi bi-clock-fill hidden md:inline" viewBox="0 0 16 16">
             <path
@@ -39,21 +40,23 @@
       </div>
     </div>
 
-    <hr class="border-t border-white border-opacity-30" />
+
+    <hr
+      :class="['transition-colors duration-300', scrolled ? 'border-black border-opacity-20' : 'border-white border-opacity-30']" />
 
     <!-- Main navbar -->
-    <nav class="bg-transparent py-5 relative z-30">
+    <nav class="py-5 relative z-30">
       <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
         <!-- Logo -->
-        <router-link to="/" class="flex items-center space-x-3 font-bold text-4xl text-white">
+        <router-link
+          :class="['flex items-center space-x-3 font-bold text-4xl transition-colors duration-300', scrolled ? 'text-black' : 'text-white']"
+          to="/">
           REMO COMP
         </router-link>
 
         <!-- Desktop links -->
-        <ul class="hidden lg:flex text-white relative 
-           text-base lg:text-lg 
-           space-x-4 lg:space-x-5 xl:space-x-12">
+        <ul :class="['hidden lg:flex relative text-base lg:text-lg space-x-4 lg:space-x-5 xl:space-x-12 transition-colors duration-300', scrolled ? 'text-black' : 'text-white']">
 
           <li><router-link to="/" class="hover:text-blue-400">HOME</router-link></li>
           <li><router-link to="/about" class="hover:text-blue-400">ABOUT US</router-link></li>
@@ -70,11 +73,33 @@
             <ul
               class="absolute left-0 mt-0 w-44 bg-black bg-opacity-90 text-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
               <li><router-link to="/services/residential"
-                  class="block px-4 py-2 hover:bg-blue-600">Residential</router-link></li>
+                  class="block px-4 py-2 hover:bg-blue-600">Kithchen</router-link></li>
               <li><router-link to="/services/commercial"
-                  class="block px-4 py-2 hover:bg-blue-600">Commercial</router-link></li>
-              <li><router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Deep
-                  Cleaning</router-link></li>
+                  class="block px-4 py-2 hover:bg-blue-600">Bathroom</router-link></li>
+              <li><router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Living
+                  Spaces</router-link></li>
+              <li><router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Outdoor
+                  Spaces</router-link></li>
+              <li><router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Room
+                  Additions</router-link></li>
+              <li><router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Whole House
+                  Remodels</router-link></li>
+              <li><router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Maintanence &
+                  Repair</router-link></li>
+              <li><router-link to="/services/deep-cleaning"
+                  class="block px-4 py-2 hover:bg-blue-600">Carpentry</router-link></li>
+              <li><router-link to="/services/deep-cleaning"
+                  class="block px-4 py-2 hover:bg-blue-600">Drywall</router-link></li>
+              <li><router-link to="/services/deep-cleaning"
+                  class="block px-4 py-2 hover:bg-blue-600">Electrical</router-link></li>
+              <li><router-link to="/services/deep-cleaning"
+                  class="block px-4 py-2 hover:bg-blue-600">Plumbing</router-link></li>
+              <li><router-link to="/services/deep-cleaning"
+                  class="block px-4 py-2 hover:bg-blue-600">Roofing</router-link></li>
+              <li><router-link to="/services/deep-cleaning"
+                  class="block px-4 py-2 hover:bg-blue-600">Landscaping</router-link></li>
+              <li><router-link to="/services/deep-cleaning"
+                  class="block px-4 py-2 hover:bg-blue-600">Fence</router-link></li>
             </ul>
           </li>
 
@@ -89,12 +114,10 @@
             </button>
             <ul
               class="absolute left-0 mt-0 w-44 bg-black bg-opacity-90 text-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-              <li><router-link to="/projects/residential"
-                  class="block px-4 py-2 hover:bg-blue-600">Residential</router-link></li>
-              <li><router-link to="/projects/commercial"
-                  class="block px-4 py-2 hover:bg-blue-600">Commercial</router-link></li>
-              <li><router-link to="/projects/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">Deep
-                  Cleaning</router-link></li>
+              <li><router-link to="/projects/residential" class="block px-4 py-2 hover:bg-blue-600">Indoor
+                  Remodels</router-link></li>
+              <li><router-link to="/projects/commercial" class="block px-4 py-2 hover:bg-blue-600">Outdoor
+                  Remodels</router-link></li>
             </ul>
           </li>
 
@@ -102,7 +125,7 @@
         </ul>
 
         <!-- Mobile hamburger -->
-        <button @click="isOpen = !isOpen" class="lg:hidden text-white focus:outline-none z-40">
+        <button :class="['lg:hidden focus:outline-none z-40 transition-colors duration-300', scrolled ? 'text-black' : 'text-white']" @click="isOpen = !isOpen">
 
           <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
@@ -115,52 +138,111 @@
         </button>
       </div>
 
-      <!-- Mobile dropdown -->
-      <div v-if="isOpen"
-        class="absolute top-full left-0 w-full bg-black bg-opacity-90 text-white px-6 py-6 space-y-4 z-30 lg:hidden">
-        <router-link to="/" class="block text-lg hover:text-blue-400">Home</router-link>
-        <router-link to="/about" class="block text-lg hover:text-blue-400">About</router-link>
-
-        <!-- Services toggle on mobile -->
-        <div>
-          <button @click="isServicesOpen = !isServicesOpen"
-            class="flex justify-between items-center w-full text-lg hover:text-blue-400 focus:outline-none">
-            <span>Services</span>
-            <svg class="h-5 w-5 transform transition" :class="{ 'rotate-180': isServicesOpen }" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div v-if="isServicesOpen" class="mt-2 ml-4 space-y-2 text-sm">
-            <router-link to="/services/residential" class="block hover:text-blue-400">Residential</router-link>
-            <router-link to="/services/commercial" class="block hover:text-blue-400">Commercial</router-link>
-            <router-link to="/services/deep-cleaning" class="block hover:text-blue-400">Deep Cleaning</router-link>
-          </div>
+      <!-- Backdrop overlay -->
+      <transition name="fade">
+        <div v-if="isOpen" @click="isOpen = false" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 lg:hidden">
         </div>
+      </transition>
 
-        <!-- Projects toggle on mobile -->
-        <div>
-          <button @click="isProjectsOpen = !isProjectsOpen"
-            class="flex justify-between items-center w-full text-lg hover:text-blue-400 focus:outline-none">
-            <span>Projects</span>
-            <svg class="h-5 w-5 transform transition" :class="{ 'rotate-180': isProjectsOpen }" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div v-if="isProjectsOpen" class="mt-2 ml-4 space-y-2 text-sm">
-            <router-link to="/projects/residential" class="block hover:text-blue-400">Residential</router-link>
-            <router-link to="/projects/commercial" class="block hover:text-blue-400">Commercial</router-link>
-            <router-link to="/projects/deep-cleaning" class="block hover:text-blue-400">Deep Cleaning</router-link>
+      <!-- Mobile Off-Canvas Menu -->
+      <transition name="slide">
+        <div v-show="isOpen" class="fixed top-0 right-0 h-full w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 
+           bg-white text-black px-6 py-6 space-y-4 z-50
+           transform transition-transform duration-300 ease-in-out 
+           overflow-y-auto">
+
+          <!-- Close button -->
+          <button @click="isOpen = false" class="absolute top-4 right-4 text-3xl font-bold text-black">&times;</button>
+
+          <router-link to="/" class="block text-lg hover:text-blue-600">Home</router-link>
+          <router-link to="/about" class="block text-lg hover:text-blue-600">About</router-link>
+
+          <!-- Services toggle -->
+          <div>
+            <button @click="isServicesOpen = !isServicesOpen"
+              class="flex justify-between items-center w-full text-lg hover:text-blue-600 focus:outline-none">
+              <span>Services</span>
+              <svg class="h-5 w-5 transform transition" :class="{ 'rotate-180': isServicesOpen }" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div v-if="isServicesOpen" class="mt-2 ml-4 space-y-2 text-sm">
+              <router-link to="/services/residential" class="block px-4 py-2 hover:bg-blue-600">- Kithchen</router-link>
+              <router-link to="/services/commercial" class="block px-4 py-2 hover:bg-blue-600">- Bathroom</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">- Living
+                Spaces</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">- Outdoor
+                Spaces</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">- Room
+                Additions</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">- Whole House
+                Remodels</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">- Maintanence &
+                Repair</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">-
+                Flooring</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">-
+                Drywall</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">-
+                Electrical</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">-
+                Plumbing</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">-
+                Roofing</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">-
+                Landscaping</router-link>
+              <router-link to="/services/deep-cleaning" class="block px-4 py-2 hover:bg-blue-600">- Fence</router-link>
+
+            </div>
           </div>
+
+          <!-- Projects toggle -->
+          <div>
+            <button @click="isProjectsOpen = !isProjectsOpen"
+              class="flex justify-between items-center w-full text-lg hover:text-blue-600 focus:outline-none">
+              <span>Projects</span>
+              <svg class="h-5 w-5 transform transition" :class="{ 'rotate-180': isProjectsOpen }" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div v-if="isProjectsOpen" class="mt-2 ml-4 space-y-2 text-sm">
+              <router-link to="/projects/residential" class="block hover:text-blue-600">- Indoor Remodels</router-link>
+              <router-link to="/projects/commercial" class="block hover:text-blue-600">- Outdoor Remodels</router-link>
+            </div>
+          </div>
+
+          <router-link to="/contact" class="block text-lg hover:text-blue-600">Contact</router-link>
         </div>
-
-        <router-link to="/contact" class="block text-lg hover:text-blue-400">Contact</router-link>
-      </div>
-
+      </transition>
     </nav>
   </header>
 </template>
+
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(100%);
+}
+</style>
+
 
 <script>
 export default {
@@ -169,8 +251,29 @@ export default {
     return {
       isOpen: false,
       isServicesOpen: false,
-      isProjectsOpen: false
+      isProjectsOpen: false,
+      scrolled: false // <-- NEW
     };
   },
+  watch: {
+    isOpen(newVal) {
+      if (newVal) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.scrolled = window.scrollY > 50; // adjust threshold if needed
+    }
+  }
 };
 </script>
